@@ -128,7 +128,7 @@ with col2:
 
 st.markdown("---")
 
-if st.button("🚀 Analyze Resume"):
+if st.button("Analyze Resume"):
     if not job_description.strip():
         st.error("Please provide a job description.")
     elif uploaded_file is None:
