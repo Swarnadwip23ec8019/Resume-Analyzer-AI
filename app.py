@@ -9,7 +9,7 @@ load_dotenv()
 # Set page config for better aesthetics
 st.set_page_config(
     page_title="Smart Resume Analyzer",
-    page_icon="",
+    page_icon="📄",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -89,7 +89,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("📄 Smart Resume Analyzer & Interview Prep")
+st.title("Smart Resume Analyzer & Interview Prep")
 st.markdown("""
 Welcome! Upload your resume and paste the job description you are targeting. 
 Our AI will analyze your profile and provide a match score, missing keywords, and tailored interview prep.
