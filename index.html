@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Resume Analyzer & Interview Prep</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Markdown-it for parsing markdown response -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.1/dist/markdown-it.min.js"></script>
+    <!-- PDF.js for reading PDF files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <i class="fa-solid fa-file-signature logo-icon"></i>
+                <h1>Resume<span class="highlight">AI</span></h1>
+            </div>
+            <p class="subtitle">Smart Resume Analyzer & Interview Prep Assistant</p>
+        </header>
+
+        <main class="glass-panel">
+            <div class="api-key-section">
+                <label for="api-key"><i class="fa-solid fa-key"></i> Google Gemini API Key</label>
+                <div class="input-group">
+                    <input type="password" id="api-key" placeholder="Enter your Gemini API key (starts with AIza...)">
+                    <button id="toggle-key-visibility" class="icon-btn" title="Show/Hide Key"><i class="fa-regular fa-eye"></i></button>
+                </div>
+                <small class="help-text">Your key is stored only in your browser and used directly to communicate with Google's API.</small>
+            </div>
+
+            <div class="input-grid">
+                <div class="input-column">
+                    <label for="job-description"><i class="fa-solid fa-briefcase"></i> Target Job Description</label>
+                    <textarea id="job-description" placeholder="Paste the job description here... (skills, responsibilities, requirements)"></textarea>
+                </div>
+
+                <div class="input-column">
+                    <label><i class="fa-solid fa-file-pdf"></i> Your Resume (PDF)</label>
+                    <div class="upload-area" id="drop-zone">
+                        <input type="file" id="resume-upload" accept="application/pdf" hidden>
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                        <h3>Drag & Drop or <span class="highlight-text">Browse</span></h3>
+                        <p id="file-name">Supports PDF only</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button id="analyze-btn" class="primary-btn">
+                    <span class="btn-text">Analyze Resume</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+            </div>
+
+            <div id="loading-overlay" class="hidden">
+                <div class="spinner"></div>
+                <p class="loading-text">AI is analyzing your profile...</p>
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+            </div>
+
+            <div id="results-section" class="hidden">
+                <h2><i class="fa-solid fa-chart-pie"></i> Analysis Results</h2>
+                <div id="results-content" class="markdown-body">
+                    <!-- Results will be injected here -->
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Powered by HTML5, CSS3, JavaScript, and Google Gemini API</p>
+        </footer>
+    </div>
+
+    <script src="app.js?v=4"></script>
+</body>
+</html>
