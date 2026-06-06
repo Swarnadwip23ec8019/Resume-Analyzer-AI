@@ -17,36 +17,74 @@ st.set_page_config(
 # Custom CSS to improve aesthetics
 st.markdown("""
 <style>
-    .main {
-        background-color: #f8f9fa;
+    /* Premium Dark Theme & Glassmorphism for Streamlit */
+    .stApp {
+        background-color: #0f172a;
+        color: #f8fafc;
+        background-image: 
+            radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 30%),
+            radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 30%);
     }
-    h1 {
-        color: #2b2b2b;
+    h1, h2, h3, p, label, .stMarkdown {
+        color: #f8fafc !important;
         font-family: 'Inter', sans-serif;
     }
-    h2, h3 {
-        color: #4a4a4a;
+    
+    /* Gradient Title */
+    div[data-testid="stVerticalBlock"] > div.element-container:nth-child(1) h1 {
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
     }
+
+    /* Primary Button */
     .stButton>button {
-        background-color: #4CAF50;
-        color: white;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
-        font-weight: bold;
-        border: none;
-        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+        color: white !important;
+        border-radius: 50px !important;
+        padding: 0.75rem 2rem !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 10px 20px -10px rgba(139, 92, 246, 0.5) !important;
+        display: block;
+        margin: 0 auto;
     }
     .stButton>button:hover {
-        background-color: #45a049;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transform: translateY(-3px) !important;
+        box-shadow: 0 15px 25px -10px rgba(139, 92, 246, 0.7) !important;
     }
-    .stTextArea>div>div>textarea {
-        border-radius: 5px;
+
+    /* Inputs and Text Areas */
+    .stTextArea textarea {
+        background: rgba(15, 23, 42, 0.6) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 12px !important;
+        color: #f8fafc !important;
     }
-    .stFileUploader>div>div>button {
-        color: #4CAF50;
-        border-color: #4CAF50;
+    .stTextArea textarea:focus {
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3) !important;
+    }
+
+    /* File Uploader */
+    .stFileUploader>div>div {
+        background: rgba(15, 23, 42, 0.6) !important;
+        border: 2px dashed rgba(255, 255, 255, 0.1) !important;
+        border-radius: 12px !important;
+    }
+    
+    /* Sidebar */
+    [data-testid="stSidebar"] {
+        background-color: rgba(30, 41, 59, 0.8) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+    [data-testid="stSidebar"] input[type="password"] {
+        background: rgba(15, 23, 42, 0.6) !important;
+        color: white !important;
+        border-radius: 8px !important;
     }
 </style>
 """, unsafe_allow_html=True)
