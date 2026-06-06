@@ -9,7 +9,7 @@ load_dotenv()
 # Set page config for better aesthetics
 st.set_page_config(
     page_title="Smart Resume Analyzer",
-    page_icon="📄",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
